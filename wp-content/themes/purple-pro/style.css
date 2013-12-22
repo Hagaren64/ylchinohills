@@ -1,9 +1,9 @@
 /*
 Theme Name: Purple Pro
-Description: Widgetized, translation ready, light, SEO-optimized WordPress theme with modern and details oriented purple design. Perfect for blog. Theme has got possibility to put custom menu in the header and footer.
+Description: Responsive, HTML5 and CSS3, widgetized, translation ready, light, easy to run, SEO-optimized WordPress theme with modern and details oriented purple design. Perfect for blog. Theme has got 5 widgetized areas (sidebar and footer) and possibility to put custom menu in the header and footer.
 Author: ThemeMotive.com
 Author URI: http://thememotive.com/
-Version: 1.5
+Version: 1.6
 Tags: purple, gray, two-columns, fixed-width, editor-style, sticky-post, threaded-comments, translation-ready, custom-menu
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -244,7 +244,7 @@ table tr.alternate td {
 	background: #fafafa;
 }
 
-form, form[class] {
+form, form {
 	margin: 1.5em 0; 
 	padding: 10px 20px; 
 	border: 1px solid #ddd; 
@@ -349,15 +349,20 @@ input[type="submit"] {
 /* Main Layout
 ------------------------------------------ */
 
-.header {
+header {
 	position: relative; 
 	margin: 0 auto; 
 	padding: 85px 0; 
 	background: url("images/header.jpg");
 }
-
-.header p.title {
-	width: 980px; 
+header>div {
+	max-width: 980px;
+	margin: 0 auto;
+	padding: 0 10px;
+	
+	position: relative;
+}
+header p.title {
 	margin: 0 auto 5px; 
 	color: #fff; 
 	font: normal 3.385em/1.3em "DosisExtraLight",sans-serif; 
@@ -366,18 +371,18 @@ input[type="submit"] {
 	text-shadow: 3px 3px 0 #272340;
 }
 
-.header p.title a {
+header p.title a {
 	border-bottom: 3px double #73516f; 
 	color: #fff; 
 	font-family: "Dosis",sans-serif;
 }
 
-.header p.title a:hover {
+header p.title a:hover {
 	color: #73516f; 
 	text-decoration: none;
 }
 
-.header p.tagline {
+header p.tagline {
 	margin: 0; 
 	padding: 0; 
 	color: #fff; 
@@ -388,15 +393,8 @@ input[type="submit"] {
 	letter-spacing: 3px;
 }
 
-.header>div {
-	position: absolute; 
-	left: 50%; 
-	top: 15px; 
-	width: 980px; 
-	margin-left: -490px;
-}
 
-.header form {
+header form {
 	float: right; 
 	width: 248px; 
 	height: 30px; 
@@ -406,58 +404,66 @@ input[type="submit"] {
 	background: url("images/search.png") 50% 50% no-repeat;
 }
 
-.header form input {
+header form input {
 	width: 203px;
-	margin: 0; 
+	margin: 0!important;
 	padding: 5px 5px 5px 10px; 
 	border: none; 
 	background: transparent; 
 	color: #736c77;
+	
 }
 
-.header form button {
+header form button {
 	width: 30px; 
 	height: 30px; 
 	padding: 0; 
 	border: none; 
-	background: transparent; 
+	background: transparent!important; 
 	line-height: 20px;
+	margin: 0!important;
 }
 
-.header form button span {
-	background: none;
+header form button span {
+	background: none!important;
 }
-
-.nav {
+header > div > div {
+	position: absolute;
+	right: 10px;
+	top: -70px;	
+}
+nav {
 	position: relative; 
 	padding: 20px 0; 
 	border-top: 1px solid #a8619f;
 	background: #823b79 url("images/nav.png") bottom repeat-x;
+	
 }
 
-.nav * {
+nav * {
 	margin: 0; 
 	padding: 0;
 }
 
-.nav ul.menu {
+nav ul.menu {
 	list-style: none; 
-	width: 980px; 
+	max-width: 980px; 
 	margin: 0 auto; 
 	text-align: center;
 }
 
-.nav ul.menu>li {
+nav ul.menu>li {
 	display: inline-block; 
 	position: relative; 
 	padding: 2px;
+	margin: 0!important;
 }
 
-.nav ul.menu>li:hover {
+nav ul.menu>li:hover {
 	z-index: 150;
 }
 
-.nav ul.menu>li>a {
+nav ul.menu>li>a {
 	display: inline-block; 
 	height: 27px; 
 	padding: 0 10px; 
@@ -469,17 +475,17 @@ input[type="submit"] {
 	text-shadow: 0 1px 0 #332243;
 }
 
-.nav ul.menu>li>a:hover,
-.nav ul.menu>li:hover>a,
-.nav ul.menu>li.current-menu-item>a, 
-.nav ul.menu>li.current_page_item>a {
+nav ul.menu>li>a:hover,
+nav ul.menu>li:hover>a,
+nav ul.menu>li.current-menu-item>a, 
+nav ul.menu>li.current_page_item>a {
 	background: #efedef; 
 	color: #823b79; 
 	text-decoration: none; 
 	text-shadow: 0 1px 0 #fff;
 }
 
-.nav ul.menu>li ul {
+nav ul.menu>li ul {
 	display: none; 
 	position: absolute; 
 	left: 2px; 
@@ -494,26 +500,27 @@ input[type="submit"] {
 	text-align: left;
 }
 
-.nav ul.menu li:hover>ul {
+nav ul.menu li:hover>ul {
 	display:block;
 }
 
-.nav ul.menu>li ul ul {
+nav ul.menu>li ul ul {
 	left: 210px; 
 	top: 0;
 }
 
-.nav ul.menu>li ul li {
+nav ul.menu>li ul li {
 	display: block; 
 	position: relative; 
 	overflow: hidden;
+	margin: 0!important;
 }
 
-.nav ul.menu>li ul li:hover {
+nav ul.menu>li ul li:hover {
 	overflow: visible;
 }
 
-.nav ul.menu>li ul li a {
+nav ul.menu>li ul li a {
 	display: block; 
 	padding: 5px 0; 
 	border-top: 1px solid #d8d7d8; 
@@ -521,12 +528,12 @@ input[type="submit"] {
 	font-size: 1em;
 }
 
-.nav ul.menu>li ul li:first-child>a {
+nav ul.menu>li ul li:first-child>a {
 	border-top: none;
 }
 
-.nav ul.menu>li ul li a:hover, 
-.nav ul.menu>li ul li:hover>a {
+nav ul.menu>li ul li a:hover, 
+nav ul.menu>li ul li:hover>a {
 	margin: 0 -9px; 
 	padding: 5px 9px; 
 	border-color: #985690; 
@@ -534,61 +541,68 @@ input[type="submit"] {
 	color: #fff; 
 	text-decoration: none;
 }
-
-.content {
-	padding-top: 35px; 
-	border-top: 1px solid #fff; 
-	background: url("images/content.png") 0 0 repeat-x;
+nav select {
+	display: none;
+	top: 15px;
+	position: relative;
 }
 
-.content>div {
+section {
+	padding: 35px 10px 0; 
+	border-top: 1px solid #fff; 
+	background: url("images/content.png") 0 0 repeat-x;
+	clear: both;
+}
+
+section>div {
 	overflow: hidden; 
-	width: 980px; 
+	max-width: 980px; 
 	margin: 0 auto;
 }
 
 .main {
 	float: left; 
 	overflow: hidden; 
-	width: 660px;
+	width: 67.5%;
+	 margin-right: -35px;
 }
 
-.sidebar {
+aside {
 	float: right; 
-	width: 300px;
+	width: 30.5%; 
 }
 
-.footer {
+footer {
 	margin: 15px 0; 
-	padding: 35px 0; 
+	padding: 35px 10px; 
 	background: #342848;
 }
 
-.footer>div {
-	width: 1000px; 
+footer>div {
+	max-width: 1000px; 
 	margin: auto;
 }
 
-.footer ul.menu {
+footer .f-menu ul.menu {
 	overflow: hidden; 
-	margin: 0; 
+	margin: 0 0 0 -10px; 
 	padding: 0;
 }
 
-.footer ul.menu li {
+footer .f-menu ul.menu li {
 	float: left; 
 	margin: 0; 
 	padding: 0; 
 	text-transform: uppercase;
 }
 
-.footer ul.menu li:first-child {
+footer .f-menu ul.menu li:first-child {
 	padding-left: 0; 
 	border-left: none;
 }
 
-.footer ul.menu li a, 
-.footer a {
+footer .f-menu ul.menu li a, 
+footer .powered a {
 	display: inline; 
 	float: none; 
 	height: auto; 
@@ -598,36 +612,47 @@ input[type="submit"] {
 	text-shadow: 0 1px 0 #2d2140;
 }
 
-.footer ul.menu li a:hover, 
-.footer a:hover, 
-.footer ul.menu li.currrent-menu-item a, 
-.footer ul.menu li.current_page_item a {
+footer .powered a {
+	padding: 0 0;
+}
+
+footer .f-menu ul.menu li a:hover, 
+footer .powered a:hover, 
+footer .f-menu ul.menu li.currrent-menu-item a, 
+footer .f-menu ul.menu li.current_page_item a {
 	color: #fff; 
 	text-decoration: none;
 }
 
-.footer ul.menu ul {
+footer .f-menu ul.menu ul {
 	display: none;
 }
 
-.footer p {
+footer p {
 	margin: 5px 10px; 
 	color: #999; 
 	font: 400 0.813em "Arial",sans-serif;
 }
 
-.footer p a {
+footer p a {
 	padding: 0; 
 	background: none;
 	font-family: "Arial",sans-serif;
 }
 
-.footer p a:hover {
+footer p a:hover {
 	background: none;
 }
 
+iframe {
+	max-width: 100%;
+}
 
-/* sidebar
+select {
+	max-width: 100%;
+}
+
+/* aside
 ------------------------------------------ */
 .widget {
 	margin-bottom: 2em; 
@@ -653,8 +678,8 @@ input[type="submit"] {
 	width: 260px;
 	margin: 5px 0;
 }
-
-.sidebar h3 {
+footer h3,
+aside h3 {
 	margin: 0 -18px 0.5em; 
 	padding: 10px 18px;
 	border-bottom: 1px solid #d8d8d8;
@@ -662,87 +687,107 @@ input[type="submit"] {
 	font: normal 1.5em "Dosis",sans-serif;
 }
 
-.sidebar .tagcloud {
+aside .tagcloud {
 	margin: 1.5em 0;
 }
-
-.sidebar ul {
+footer .widget ul,
+aside ul {
 	list-style: none;
 	margin: 10px 0;
 	padding: 0;
 }
 
-.sidebar ul li {
+footer .widget ul li,
+aside ul li {
 	margin: 0;
 	padding: 5px 0;
 	border-top: 1px solid #e8e8e8;
 }
-
-.sidebar .widget>ul>li:first-child {
+aside .widget>div>ul>li:first-child,
+footer .widget>div>ul>li:first-child,
+footer .widget>ul>li:first-child,
+aside .widget>ul>li:first-child {
 	border-top: none;
 }
 
-.sidebar ul li a {
+footer .widget ul li a,
+aside ul li a {
 	color: #525252;
 }
-
-.sidebar ul li.current-menu-item>a, 
-.sidebar ul li.current_page_item>a, 
-.sidebar ul li.current-cat>a,
-.sidebar ul li.current-menu-item>a:visited, 
-.sidebar ul li.current_page_item>a:visited, 
-.sidebar ul li.current-cat>a:visited {
+footer .widget ul li.current-menu-item>a, 
+footer .widget ul li.current_page_item>a, 
+footer .widget ul li.current-cat>a,
+footer .widget ul li.current-menu-item>a:visited, 
+footer .widget ul li.current_page_item>a:visited, 
+footer .widget ul li.current-cat>a:visited,
+aside ul li.current-menu-item>a, 
+aside ul li.current_page_item>a, 
+aside ul li.current-cat>a,
+aside ul li.current-menu-item>a:visited, 
+aside ul li.current_page_item>a:visited, 
+aside ul li.current-cat>a:visited {
 	font-weight: bold; 
 	color: #9a5691;
 }
-	
-.sidebar a:visited, 
-.sidebar .tagcloud a:visited {
+
+footer .widget a:visited, 
+footer .widget .tagcloud a:visited 
+aside a:visited, 
+aside .tagcloud a:visited {
 	color: #9a5691;
 }
-
-.sidebar a:hover {
+footer .widget a:hover,
+aside a:hover {
 	color: #a4b103; 
 	text-decoration: none;
 }
-
-.sidebar ul li ul {
+footer .widget ul li ul,
+aside ul li ul {
 	margin: 5px 0 -5px;
 }
-	
-.sidebar ul ul li {
+footer .widget ul ul li,	
+aside ul ul li {
 	padding-left: 20px;
 }
-
-.sidebar table a {
+footer .widget table a,
+aside table a {
 	color: #9a5691;
 }
-
-.sidebar table a:hover {
+footer .widget table a:hover,
+aside table a:hover {
 	color: #a4b103;
 }
-
-.sidebar form {
+footer .widget form,
+aside form {
 	margin: 10px 0; 
 	padding: 0; 
 	border: none; 
 	background: none;
 }
-
-.sidebar form input {
+footer .widget form input,
+aside form input {
 	width: 180px;
 }
+footer .widget form.searchform input,
+aside form.searchform input {
+	width: 70%; 
+	margin-right: 5px;
+}
+footer .widget form.searchform button,
+aside form.searchform button {
+	margin-right: -20px;
+}
 
-.sidebar form.searchform input {
-	width: 180px; 
+footer .widget form.searchform input {
+	width: 62%; 
 	margin-right: 5px;
 }
 
 
 /* post styles
 ------------------------------------------ */
-.main div.post, 
-.main div.page {
+.main article.post, 
+.main article .page {
 	clear: both; 
 	overflow: hidden; 
 	margin-bottom: 30px; 
@@ -751,36 +796,36 @@ input[type="submit"] {
 	background: #fff;
 }
 
-.main div.post>div,
-.main div.page>div {
+.main article.post>div,
+.main article.page>div {
 	overflow: hidden; 
 	padding: 10px 18px; 
 	border: 1px solid #fff; 
 	background: #fff url("images/post-bg.png") top repeat-x;
 }
 
-div.post>div>h2:first-child,
-div.page>div>h2:first-child {
+article.post>div>h2:first-child,
+article.page>div>h2:first-child {
 	margin: 0 0 0.25em; 
 	color: #2b2b2f; 
 	font: bold 2.154em "Dosis",sans-serif;
 }
 
-div.post h2:first-child, 
-div.page h2:first-child {
+article.post h2:first-child, 
+article.page h2:first-child {
 	margin-top: 0;
 }
 
-div.post h2 a:hover , 
-div.page h2 a:hover {
+article.post h2 a:hover , 
+article.page h2 a:hover {
 	color: #9a5691;
 }
 
-div.post.sticky {
+article.post.sticky {
 	border-color: #aea4ad;
 }
 
-div.post.sticky>div {
+article.post.sticky>div {
 	background: #ededed;
 	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VkZWRlZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmNWY1ZjUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
 	background: -moz-linear-gradient(top,  #ededed 0%, #f5f5f5 100%);
@@ -792,11 +837,11 @@ div.post.sticky>div {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#f5f5f5',GradientType=0 );
 }
 
-div.post.sticky h2 a {
+article.post.sticky h2 a {
 	color: #9a5691;
 }
 
-div.post.sticky h2 a:hover {
+article.post.sticky h2 a:hover {
 	color: #2b2b2f;
 }
 
@@ -867,7 +912,7 @@ p.more a span {
 	background: url("images/more.png") 50% 50% no-repeat; text-indent: -50em;
 }
 
-div.post.sticky p.more {
+article.post.sticky p.more {
 	border-color: #aea4ad;
 }
 
@@ -1067,7 +1112,7 @@ a.post-edit-link {
 
 img {
 	margin: 0; 
-	max-width: 620px; 
+	max-width: 100%; 
 	height: auto;
 }
 
@@ -1083,12 +1128,12 @@ a:hover img.attachment-thumbnail {
 }
 
 embed {
-	max-width: 620px;
+	max-width: 100%;
 }
 
 .wp-caption img, 
 .wp-caption embed {
-	max-width: 610px;
+	max-width: 100%;
 }
 
 label+.required {
@@ -1107,6 +1152,7 @@ label+.required {
 .gallery dl dt {
 	float: none; 
 	width: auto;
+	padding: 0 10px 0 0;
 }
 
 .gallery dl dd {
@@ -1119,10 +1165,11 @@ label+.required {
 .gallery a img,
 .gallery a img[class] {
 	padding: 0;
+	margin:0;
 }
 
 .wp-caption {
-	max-width: 680px;
+	max-width: 100%;
 }
 
 .wp-caption, .gallery-caption {
@@ -1133,7 +1180,7 @@ label+.required {
 }
 
 .gallery-caption {
-	margin: 5px;
+	margin: 5px 10px 5px 0!important;
 }
 
 [id*="gallery"] img {
@@ -1195,4 +1242,297 @@ p.comment-form-comment label {
 
 .powered {
 	text-align: right;
+	margin-bottom: 19px;
+    margin-top: -18px;
+}
+
+footer .widgets {
+	overflow: hidden;	
+}
+
+footer .widgets .col {
+	width: 23%;
+	float: left;
+	margin: 0;
+	margin-right: 2%;	
+}
+
+footer .widgets .cols:last-child .col:last-child {
+	margin-right: 0;
+	width: 25%;
+}
+
+img.alignleft,
+img.alignright,
+img.aligncenter {
+	max-width: 95%!important;
+}
+
+
+
+@media only screen and (min-width: 401px) and (max-width: 800px) {
+	
+	.main {
+		margin-left: 0;
+		margin-right: 0;
+		width: 100%;	
+	}
+	aside {
+		border-left: none;
+		border-right: none;
+		
+		margin-left: 0;
+		margin-right: 0;		
+		width: 100%;
+		float: none;
+		clear: both;
+		overflow: hidden;		
+	}
+	aside .cols {
+		width: 50%;
+		float: left;	
+	}
+	aside .cols:first-child .widget{
+		margin-right: 7px;	
+	}	
+	aside .cols:last-child .widget{
+		margin-left: 7px;	
+	}
+	
+	p.post-date {
+		margin-left: 0;
+		margin-right: 7%;
+		width: 45px;	
+	}
+	
+	/*footer*/
+	footer {
+		padding-left: 10px;
+		padding-right: 10px;	
+	}
+	
+	footer .widgets .cols {
+		width: 49%;
+		float: right;	
+	}
+	footer .widgets .cols:first-child {
+		width: 49%;
+		float: left;	
+	}
+	
+	footer .widgets .col {
+		margin-left: 0;
+		margin-right: 0;
+		padding-left: 0;
+		padding-right: 0;
+		width: 100%;
+		vertical-align: top;
+		margin: 0 auto!important;
+		float: left;
+			
+	}
+	
+	footer .widgets .col .widget {
+		margin-right:0;
+		margin-left:0;
+		margin-top: 15px;	
+	}
+	
+	.engine {
+		display: none
+	}
+	input, select, select[class], textarea {
+		width: 75%;	
+	}
+	section form.searchform input {
+		width: 84%;	
+	}
+	.widget form[class] input, aside form input {
+		width: 66%;
+		padding-right: 0;
+		padding-left: 3%;	
+	}
+	table th, table th[class],
+	table td, table td[class] {
+		padding: 3px 5px;	
+	}
+	footer .widgets .cols:last-child .col:last-child {
+		width: 100%;	
+	}	
+	#calendar_wrap {
+	margin-left: -10px;
+	
+	}
+	
+	#calendar_wrap th,
+	#calendar_wrap td {
+		padding: 3px;
+	}
+}
+
+/* for mobile divices*/
+@media only screen and (min-width: 50px) and (max-width: 400px) {
+	#calendar_wrap {
+	margin-left: -10px;
+	
+}
+
+#calendar_wrap th,
+#calendar_wrap td {
+	padding: 3px;
+}
+	/*Header*/
+	footer .widgets .cols:last-child .col:last-child {
+		width: 100%;	
+	}	
+	header > div {
+		text-align: center;	
+	}
+	header {
+		padding-bottom: 30px;
+	}
+	.head-area {
+		float: none;
+		margin:	0 auto;
+		display: inline-block;	
+	}
+	header p.tagline {
+	
+	}
+	nav {
+		border: none;
+		padding: 0 0 30px;	
+	}
+	nav > *{
+		display: none;	
+	}
+	nav select {
+		display: block;
+		margin: 0 auto;	
+	}
+	header > div > div {
+		width: 100%;
+		right: 0;	
+	}
+	header form[class] {
+		float: none;
+		clear: both;
+		margin: 20px auto 0;
+		position: relative;
+		top: auto;
+		right: auto;	
+	}
+	
+	
+	/*footer*/
+	footer .widgets .col {
+		clear: both;
+		float: none;
+		width: 100%;	
+	}
+	footer .widgets .col .widget {
+		margin-left: 0!important;
+		margin-right: 0!important;	
+	}
+	.engine {
+		display: none
+	}
+	
+	.main {
+		width: 100%;
+		padding: 15px 0 0;	
+	}
+	.main article.post, .main article.page {
+		margin-right: 0;
+		margin: 0 0 10px 0;
+		padding: 0;	
+	}
+	p.post-date {
+		margin-left: -5px;
+		margin-top: 23px;	
+	}
+	/*aside*/
+	section form.searchform input {
+		width: 87%;	
+	}
+	aside {
+		border-left: medium none;
+		border-right: medium none;
+		clear: both;
+		float: none;
+		margin-bottom: 20px;
+		border-bottom: none;
+		padding-bottom: 0;
+		width: 100%;
+		padding: 0 0 30px;
+	}
+	aside .cols {
+		margin: 0 0;
+	}
+	
+	input, select, select[class] {
+		width: 93%;
+		clear: both;	
+	}
+	textarea {
+		min-width: 0;
+		width: 93%;	
+	}
+	
+	
+	.widget form[class] input, aside form input {
+		width: 78%;
+		padding-right: 0;
+		padding-left: 3%;	
+	}	
+	footer .widget form.searchform input {
+		width: 78%; 
+		margin-right: 5px;
+	}
+
+	iframe {
+		max-height: 200px!important;
+	}
+	p.form-submit, p.form-allowed-tags {
+		margin-left: 0;	
+	}
+	
+	.powered {
+		text-align: center;	
+	}
+	
+}
+@media only screen and (min-width: 50px) and (max-width: 300px) {
+	body {
+		overflow: hidden;	
+	}
+	header form[class] {
+		width: 86%;
+		background-position: 0 50%;
+		padding-left: 0;
+		padding-right: 0;
+		margin-left: 10px;
+		margin-right: 30px;
+	}
+	header form button {
+		position: absolute;
+		top: 1px;
+		right: -17px;
+		background: url(images/search.png) no-repeat scroll right 0!important;
+		height: 39px;	
+	}
+	header p.title {
+		font-size: 2.5em;	
+	}
+	#calendar_wrap {
+		margin-left: -10px;
+		margin-right: -10px;	
+	}
+	.widget form[class] input, aside form input {
+		width: 60%;	
+	}	
+	footer .widget form.searchform input {
+		width: 60%; 
+	}
+	
 }

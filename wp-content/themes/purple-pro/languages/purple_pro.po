@@ -1,18 +1,17 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"POT-Creation-Date: 2013-02-24 12:27+0100\n"
-"PO-Revision-Date: 2013-02-24 12:28+0100\n"
-"Last-Translator: Example <info@thememotive.com>\n"
-"Language-Team: \n"
+"Project-Id-Version: Purple Pro\n"
+"POT-Creation-Date: 2013-07-30 10:54+0100\n"
+"PO-Revision-Date: 2013-07-30 11:02+0100\n"
+"Last-Translator: \n"
+"Language-Team:  <info@thememotive.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.5\n"
-"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: _;_e;__\n"
 "X-Poedit-Basepath: .\n"
-"X-Poedit-SearchPath-0: /"
-"/purple-pro\n"
+"X-Poedit-SearchPath-0: /purple-pro\n"
 
 #: /purple-pro/404.php:3
 msgid "Error 404 - Not Found"
@@ -105,7 +104,39 @@ msgstr ""
 msgid "The sidebar widget area"
 msgstr ""
 
-#: /purple-pro/functions.php:78
+#: /purple-pro/functions.php:42
+msgid "Footer Widget Area 1"
+msgstr ""
+
+#: /purple-pro/functions.php:44
+msgid "The footer widget area 1"
+msgstr ""
+
+#: /purple-pro/functions.php:51
+msgid "Footer Widget Area 2"
+msgstr ""
+
+#: /purple-pro/functions.php:53
+msgid "The footer widget area 2"
+msgstr ""
+
+#: /purple-pro/functions.php:60
+msgid "Footer Widget Area 3"
+msgstr ""
+
+#: /purple-pro/functions.php:62
+msgid "The footer widget area 3"
+msgstr ""
+
+#: /purple-pro/functions.php:69
+msgid "Footer Widget Area 4"
+msgstr ""
+
+#: /purple-pro/functions.php:71
+msgid "The footer widget area 4"
+msgstr ""
+
+#: /purple-pro/functions.php:114
 #, php-format
 msgid "Page %s"
 msgstr ""

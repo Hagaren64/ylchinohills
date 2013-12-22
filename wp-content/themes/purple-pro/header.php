@@ -1,7 +1,19 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes('xhtml'); ?>>
-<head profile="http://gmpg.org/xfn/11">
-  	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
+<!doctype html>
+<!--[if gte IE 9]>
+<html <?php language_attributes(); ?> class="ie ie9">
+<![endif]-->
+<!--[if IE 8]>
+<html <?php language_attributes(); ?> class="ie ie8">
+<![endif]-->
+<!--[if IE 7]>
+<html <?php language_attributes(); ?> class="ie ie7">
+<![endif]-->
+<!--[if !IE]><!-->
+<html <?php language_attributes(); ?> >
+ <!--<![endif]-->
+<head>
+  	<meta charset="<?php bloginfo('charset'); ?>">
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 	<title><?php wp_title( '', true, 'right' );?></title>
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 	<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" />
@@ -9,14 +21,16 @@
 </head>
 <body <?php body_class(); ?>>
 	
-	<div class="header">
-		<div><?php get_search_form(); ?></div>
-		<p class="title"><a href="<?php echo home_url(); ?>/" name="top"><?php bloginfo('name'); ?></a></p>
-		<p class="tagline"><?php bloginfo('description'); ?></p>
-	</div>
-	<div class="nav">
+	<header>
+		<div>
+			<div><?php get_search_form(); ?></div>
+			<p class="title"><a href="<?php echo home_url(); ?>/" name="top"><?php bloginfo('name'); ?></a></p>
+			<p class="tagline"><?php bloginfo('description'); ?></p>
+		</div>
+	</header>
+	<nav>
 		<?php wp_nav_menu( array('fallback_cb' => 'purple_pro_page_menu', 'depth' => '3', 'theme_location' => 'primary', 'link_before' => '', 'link_after' => '', 'container' => false) ); ?>
 		<div class="clear"><!-- --></div>
-	</div>
-	<div class="content"><div>
+	</nav>
+	<section class="content"><div>
 		

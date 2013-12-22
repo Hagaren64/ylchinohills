@@ -5,7 +5,7 @@
 	<?php if (have_posts()) : ?>
 		<?php while (have_posts()) : the_post(); ?>
 			<!-- Start: Post -->
-			<div <?php post_class(); ?>><div>
+			<article <?php post_class(); ?>><div>
 				<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a> <?php edit_post_link(__('Edit this entry', 'purple_pro'), '', ''); ?></h2>
 				<?php the_post_thumbnail(); ?>
 				<p class="post-meta"><span class="icon date"></span> <?php the_time( get_option( 'date_format' ) ) ?>, <span class="icon author"></span> <?php the_author(); ?> <span class="icon cats"></span><?php the_category(", "); ?>, <?php if ( comments_open() ) : ?>, <?php comments_popup_link('<span class="icon comments"></span> 0', '<span class="icon comments"></span> 1', '<span class="icon comments"></span> %'); ?> <?php endif; ?></p>
@@ -14,7 +14,7 @@
 				
 			</div>
 			<p class="more"><a href="<?php the_permalink() ?>"><span><?php _e( ' ', 'purple_pro' );?></span></a></p>
-			</div>
+			</article>
 			<!-- End: Post -->
 		<?php endwhile; ?>
 

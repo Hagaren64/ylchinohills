@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <div class="main">
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>><div>
+		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>><div>
 			<h1><?php the_title(); ?> <?php edit_post_link(__('Edit this entry', 'purple_pro'), '', ''); ?></h1>
 			<p class="post-meta"><span class="icon date"></span> <?php the_time( get_option( 'date_format' ) ) ?>, <span class="icon author"></span> <?php the_author(); ?>, <span class="icon cats"></span><?php the_category(", "); ?>,  <?php if ( comments_open() ) : ?>, <?php comments_popup_link('<span class="icon comments"></span> 0', '<span class="icon comments"></span> 1', '<span class="icon comments"></span> %'); ?> <?php endif; ?></p>
 			<?php the_content(); ?>
@@ -17,7 +17,7 @@
 			<div id="comments">
 				<?php comments_template(); ?>
 			</div>
-		</div></div>
+		</div></article>
 	<?php endwhile; endif; ?>
 </div>
 <?php get_sidebar(); ?>

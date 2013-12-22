@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <div class="main">
 	<?php if (have_posts()) while (have_posts()) : the_post(); ?>
-	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>><div>
+	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>><div>
 		<h1><?php the_title(); ?> <?php edit_post_link(__('Edit this entry', 'purple_pro'), '', ''); ?></h1>
 		<?php the_content(); ?>
 	
@@ -9,7 +9,7 @@
 			<?php comments_template(); ?>
 		</div>
 		<p class="pages"><?php wp_link_pages(); ?></p>
-	</div></div>
+	</div></article>
 	<?php endwhile; ?>
 </div>
 <?php get_sidebar(); ?>

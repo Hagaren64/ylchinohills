@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <div class="main">
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-	<div class="page"><div>
+	<article class="page"><div>
 		<h1 class="post-title"><?php the_title(); ?> <?php edit_post_link(__('Edit this entry', 'purple_pro'), '', ''); ?></h1>
 		<p><?php printf( __( '<a href="%1$s">%2$s</a>', 'purple_pro' ), get_permalink( $post->post_parent ), get_the_title( $post->post_parent ));?></p>
 		<p><a href="<?php echo wp_get_attachment_url($post->ID); ?>"><?php echo wp_get_attachment_image( $post->ID, 'medium' ); ?></a></p>
@@ -12,7 +12,7 @@
 			<span class="alignright"><?php next_image_link() ?></span>
 		</p>
 	<?php comments_template(); ?>
-	</div></div>
+	</div></article>
 	<?php endwhile; endif; ?>
 	</div>
 		<?php get_sidebar(); ?>

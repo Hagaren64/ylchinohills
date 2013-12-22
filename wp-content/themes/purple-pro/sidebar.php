@@ -1,4 +1,4 @@
-<div class="sidebar">
+<aside>
 	<?php
 	if (!dynamic_sidebar('sidebar-widget-area') ) : ?>
 	<div class="widget">
@@ -31,4 +31,4 @@
 
 	<?php } ?>
 	<?php endif; ?>
-</div>
+</aside>

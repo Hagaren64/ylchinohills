@@ -6,7 +6,7 @@
 	
 		<?php while (have_posts()) : the_post(); ?>
 			<!-- Start: Post -->
-			<div <?php post_class(); ?>><div>
+			<article <?php post_class(); ?>><div>
 			
 				<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a> <?php edit_post_link(__('Edit this entry', 'purple_pro'), '', ''); ?></h2>
 				<?php the_post_thumbnail(); ?>
@@ -15,7 +15,7 @@
 				<?php if(has_tag()): ?><p class="tags"><span class="icon tags"></span><?php the_tags(""); ?></p><?php endif; ?>
 			</div>
 			<p class="more"><a href="<?php the_permalink() ?>"><span><?php _e( ' ', 'purple_pro' );?></span></a></p>
-			</div>
+			</article>
 			<!-- End: Post -->
 		<?php endwhile; ?>
 
@@ -25,13 +25,13 @@
 		</p>
 	<?php else : ?>
 	<h1><?php echo get_search_query();?></h1>
-	<div class="post">	
+	<article class="post">	
 		<div>
 
 		<p><?php _e( 'No posts found. Try a different search?', 'purple_pro' ); ?></p>
 		<?php get_search_form(); ?>
 		</div>
-	</div>
+	</article>
 	<?php endif; ?>
 </div>
 <?php get_sidebar(); ?>
