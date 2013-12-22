@@ -1,0 +1,142 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2013-02-24 12:27+0100\n"
+"PO-Revision-Date: 2013-02-24 12:28+0100\n"
+"Last-Translator: Example <info@thememotive.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: /"
+"/purple-pro\n"
+
+#: /purple-pro/404.php:3
+msgid "Error 404 - Not Found"
+msgstr ""
+
+#: /purple-pro/404.php:4
+msgid "Apologies, but the page you requested could not be found."
+msgstr ""
+
+#: /purple-pro/archive.php:17
+msgid "Author Archive"
+msgstr ""
+
+#: /purple-pro/archive.php:19
+msgid "Blog Archives"
+msgstr ""
+
+#: /purple-pro/archive.php:25
+#: /purple-pro/image.php:5
+#: /purple-pro/index.php:9
+#: /purple-pro/page.php:5
+#: /purple-pro/search.php:11
+#: /purple-pro/single.php:5
+msgid "Edit this entry"
+msgstr ""
+
+#: /purple-pro/archive.php:31
+#: /purple-pro/index.php:16
+#: /purple-pro/search.php:17
+msgid " "
+msgstr ""
+
+#: /purple-pro/archive.php:37
+#: /purple-pro/index.php:22
+#: /purple-pro/search.php:23
+msgid "Previous Posts"
+msgstr ""
+
+#: /purple-pro/archive.php:38
+#: /purple-pro/index.php:23
+#: /purple-pro/search.php:24
+msgid "Next posts"
+msgstr ""
+
+#: /purple-pro/archive.php:42
+#: /purple-pro/index.php:26
+msgid "Not found"
+msgstr ""
+
+#: /purple-pro/archive.php:43
+#: /purple-pro/index.php:27
+msgid "Sorry, but you are looking for something that isn't here."
+msgstr ""
+
+#: /purple-pro/comments.php:9
+msgid "Comments are currently closed."
+msgstr ""
+
+#: /purple-pro/comments.php:12
+#, php-format
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgstr ""
+
+#: /purple-pro/comments.php:12
+#, php-format
+msgid "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr ""
+
+#: /purple-pro/footer.php:6
+msgid "Theme created by"
+msgstr ""
+
+#: /purple-pro/footer.php:6
+msgid "Powered by"
+msgstr ""
+
+#: /purple-pro/functions.php:21
+msgid "Header Menu"
+msgstr ""
+
+#: /purple-pro/functions.php:22
+msgid "Footer Menu"
+msgstr ""
+
+#: /purple-pro/functions.php:32
+msgid "Sidebar Widget Area"
+msgstr ""
+
+#: /purple-pro/functions.php:34
+msgid "The sidebar widget area"
+msgstr ""
+
+#: /purple-pro/functions.php:78
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: /purple-pro/image.php:6
+#, php-format
+msgid "<a href=\"%1$s\">%2$s</a>"
+msgstr ""
+
+#: /purple-pro/image.php:9
+#: /purple-pro/sidebar.php:5
+#: /purple-pro/single.php:8
+msgid "Pages"
+msgstr ""
+
+#: /purple-pro/search.php:31
+msgid "No posts found. Try a different search?"
+msgstr ""
+
+#: /purple-pro/searchform.php:3
+msgid "Search"
+msgstr ""
+
+#: /purple-pro/sidebar.php:11
+msgid "Categories"
+msgstr ""
+
+#: /purple-pro/sidebar.php:17
+msgid "Archives"
+msgstr ""
+
+#: /purple-pro/sidebar.php:24
+msgid "Meta"
+msgstr ""

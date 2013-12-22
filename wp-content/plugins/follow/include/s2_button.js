@@ -1,0 +1,1 @@
+edButtons[edButtons.length]=new edButton('Subscribe','Subscribe','[followpluginsubscriptionform]','','',-1);
