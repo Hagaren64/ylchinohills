@@ -45,13 +45,38 @@ function list_members() {
 	
 	$prefix = $wpdb->prefix;
 	
-	$result =  mysql_query("SELECT ".$prefix."users.ID, ".$prefix."users.user_email, ".$prefix."users.display_name, ".$prefix."users.user_registered, ".$prefix."usermeta.user_id, ".$prefix."usermeta.meta_key, ".$prefix."usermeta.meta_value,".$prefix."cimy_uef_data.VALUE as phone FROM ".$prefix."users, ".$prefix."usermeta,".$prefix."cimy_uef_data WHERE ".$prefix."usermeta.user_id = ".$prefix."users.ID AND ".$prefix."usermeta.user_id = ".$prefix."cimy_uef_data.USER_ID AND ".$prefix."usermeta.meta_key = '".$prefix."user_level' ORDER BY user_login ");
+	$result =  mysql_query("SELECT ".$prefix."users.ID, ".$prefix."users.user_email, ".$prefix."users.display_name, ".$prefix."users.user_registered, ".$prefix."usermeta.user_id, ".$prefix."usermeta.meta_key, ".$prefix."usermeta.meta_value,".$prefix."users.user_login,".$prefix."cimy_uef_data.VALUE as phone FROM ".$prefix."cimy_uef_data, ".$prefix."users, ".$prefix."usermeta WHERE ".$prefix."usermeta.user_id = ".$prefix."users.ID AND ".$prefix."usermeta.user_id = ".$prefix."cimy_uef_data.USER_ID AND (".$prefix."usermeta.meta_key = 'first_name' OR ".$prefix."usermeta.meta_key = 'last_name' OR ".$prefix."usermeta.meta_key = '".$prefix."capabilities') ORDER BY user_login ");
 	
+	//include('WDOsearch.php');
+	//echo search_members();
+	//echo '<br />';
 	echo "<table id='memberstable'><tr>\n";
-	echo "<td id='memberstitle'>Name</td><td id='memberstitle'>Position</td><td id='memberstitle'>Phone Number</td><td id='memberstitle'>Email</td></tr>\n";
+	echo "<td id='memberstitle'>Name</td><td id='memberstitle'>Nickname</td><td id='memberstitle'>Position</td><td id='memberstitle'>Phone Number</td><td id='memberstitle'>Email</td></tr>\n";
 	while ($memberlist = mysql_fetch_array($result)) {
-	include('userlevel.php');
-	echo  "<tr><td id='membersname'>" .$memberlist['display_name'] . "</td><td id='membersrank'>" . $userlevel . "</td><td id='membersjoined'>" . format_phone($memberlist['phone']) . "</td><td><a href='mailto:".$memberlist['user_email']."'>" . $memberlist['user_email'] . "</a></td></tr>\n";
+		include('userlevel.php');
+		if($memberlist['meta_key']=="first_name"){
+			echo  "<tr>";
+			echo "<td id='membersname'><a href='/forums/user/".$memberlist['user_login']."'>" .$memberlist['meta_value'] . " ";
+		} else if($memberlist['meta_key']=="last_name"){
+			echo $memberlist['meta_value'] . "</a></td>";
+			echo "<td id='membersname'>" .$memberlist['display_name'] . "</td>";
+		} else if($memberlist['meta_key']=="wp_capabilities"){
+			$user_role=explode("{", $memberlist['meta_value']);
+			$user_role=explode(";", $user_role[1]);
+			$user_role=explode('"', $user_role[0]);
+			if($user_role[1]=="partner"){
+				echo "<td id='membersrank'>Partner</td>";
+			} else if($user_role[1]=="administrator"){
+				echo "<td id='membersrank'>Administrator</td>";
+			} else if($user_role[1]=="assistantmanager"){
+				echo "<td id='membersrank'>Assistant Manager</td>";
+			} else if($user_role[1]=="Supervisor"){
+				echo "<td id='membersrank'>Supervisor</td>";
+			} 			
+			echo "<td id='membersjoined'>" . format_phone($memberlist['phone']) . "</td>";
+			echo "<td><a href='mailto:".$memberlist['user_email']."'>" . $memberlist['user_email'] . "</a></td>";
+			echo "</tr>\n";
+		}
 	}
 	echo "</table>";
 
@@ -70,16 +95,38 @@ function list_members_search() {
 	
 	$prefix = $wpdb->prefix;
 	
-	$result =  mysql_query("SELECT ".$prefix."users.ID, ".$prefix."users.user_email, ".$prefix."users.display_name, ".$prefix."users.user_registered, ".$prefix."usermeta.user_id, ".$prefix."usermeta.meta_key, ".$prefix."usermeta.meta_value,".$prefix."cimy_uef_data.VALUE as phone FROM ".$prefix."users, ".$prefix."usermeta,".$prefix."cimy_uef_data WHERE ".$prefix."usermeta.user_id = ".$prefix."users.ID AND ".$prefix."usermeta.user_id = ".$prefix."cimy_uef_data.USER_ID AND ".$prefix."usermeta.meta_key = '".$prefix."user_level' ORDER BY user_login ");
+	$result =  mysql_query("SELECT ".$prefix."users.ID, ".$prefix."users.user_email, ".$prefix."users.display_name, ".$prefix."users.user_registered, ".$prefix."usermeta.user_id, ".$prefix."usermeta.meta_key, ".$prefix."usermeta.meta_value,".$prefix."cimy_uef_data.VALUE as phone FROM ".$prefix."cimy_uef_data, ".$prefix."users, ".$prefix."usermeta WHERE ".$prefix."usermeta.user_id = ".$prefix."users.ID AND ".$prefix."usermeta.user_id = ".$prefix."cimy_uef_data.USER_ID AND (".$prefix."usermeta.meta_key = 'first_name' OR ".$prefix."usermeta.meta_key = 'last_name' OR ".$prefix."usermeta.meta_key = '".$prefix."capabilities') ORDER BY user_login ");
 	
-	include('WDOsearch.php');
-	echo search_members();
-	echo '<br />';
+	//include('WDOsearch.php');
+	//echo search_members();
+	//echo '<br />';
 	echo "<table id='memberstable'><tr>\n";
-	echo "<td id='memberstitle'>Name</td><td id='memberstitle'>Position</td><td id='memberstitle'>Phone Number</td><td id='memberstitle'>Email</td></tr>\n";
+	echo "<td id='memberstitle'>Name</td><td id='memberstitle'>Nickname</td><td id='memberstitle'>Position</td><td id='memberstitle'>Phone Number</td><td id='memberstitle'>Email</td></tr>\n";
 	while ($memberlist = mysql_fetch_array($result)) {
-	include('userlevel.php');
-	echo  "<tr><td id='membersname'>" .$memberlist['display_name'] . "</td><td id='membersrank'>" . $userlevel . "</td><td id='membersjoined'>" . format_phone($memberlist['phone']) . "</td><td><a href='mailto:".$memberlist['user_email']."'>" . $memberlist['user_email'] . "</a></td></tr>\n";
+		include('userlevel.php');
+		if($memberlist['meta_key']=="first_name"){
+			echo  "<tr>";
+			echo "<td id='membersname'>" .$memberlist['display_name'] . "</td>";
+			echo "<td id='membersname'>" .$memberlist['meta_value'] . " ";
+		} else if($memberlist['meta_key']=="last_name"){
+			echo $memberlist['meta_value'] . "</td>";
+		} else if($memberlist['meta_key']=="wp_capabilities"){
+			$user_role=explode("{", $memberlist['meta_value']);
+			$user_role=explode(";", $user_role[1]);
+			$user_role=explode('"', $user_role[0]);
+			if($user_role[1]=="partner"){
+				echo "<td id='membersrank'>Partner</td>";
+			} else if($user_role[1]=="administrator"){
+				echo "<td id='membersrank'>Administrator</td>";
+			} else if($user_role[1]=="assistantmanager"){
+				echo "<td id='membersrank'>Assistant Manager</td>";
+			} else if($user_role[1]=="Supervisor"){
+				echo "<td id='membersrank'>Supervisor</td>";
+			} 			
+			echo "<td id='membersjoined'>" . format_phone($memberlist['phone']) . "</td>";
+			echo "<td><a href='mailto:".$memberlist['user_email']."'>" . $memberlist['user_email'] . "</a></td>";
+			echo "</tr>\n";
+		}
 	}
 	echo "</table>";
 
